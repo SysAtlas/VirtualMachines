@@ -59,8 +59,8 @@ public enum CMaInstructionType {
     static int expectedNumberOfArguments(CMaInstructionType type) {
         switch (type) {
             case LOADC:
-            case LOAD:
-            case STORE:
+            // case LOAD:
+            // case STORE: Commenting this out, should be error in the template. 
             case LOADA:
             case STOREA:
             case JUMP:
