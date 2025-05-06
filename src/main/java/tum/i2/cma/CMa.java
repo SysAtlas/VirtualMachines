@@ -230,7 +230,7 @@ public class CMa implements VirtualMachine {
     }
 
     private void handle_xor() {
-        if (sp < 2) {
+        if (sp < 1) {
             throw new RuntimeException("Not enough arguments on the stack to call XOR!");
         }
         int c1 = stack[sp];

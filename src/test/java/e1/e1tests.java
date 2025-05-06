@@ -276,35 +276,60 @@ public class e1tests {
     void popTestSimple() {
         String pathname = "popTestSimple.cma";
         CMaTriple machine_t = setup_run_machine(pathname);
+    
+        assertEquals(machine_t.sp, 0);
+        assertEquals(machine_t.stack[machine_t.sp], 1337);
+        machine_t.machine.printStack();
     }
 
     @Test
     void jumpTestSimple() {
         String pathname = "jumpTestSimple.cma";
         CMaTriple machine_t = setup_run_machine(pathname);
+
+        assertEquals(machine_t.sp, 10);
+        assertEquals(machine_t.stack[machine_t.sp], 1337);
+        machine_t.machine.printStack();
     }
 
     @Test
     void jumpzTestSimple() {
         String pathname = "jumpzTestSimple.cma";
         CMaTriple machine_t = setup_run_machine(pathname);
+
+        machine_t.machine.printStack();
+        assertEquals(machine_t.sp, 10);
+        assertEquals(machine_t.stack[machine_t.sp], 1337);
     }
 
     @Test
     void jumpiTestSimple() {
         String pathname = "jumpiTestSimple.cma";
         CMaTriple machine_t = setup_run_machine(pathname);
+
+        machine_t.machine.printStack();
+        assertEquals(machine_t.sp, 10);
+        assertEquals(machine_t.stack[machine_t.sp], 1337);
     }
 
     @Test
     void dupTestSimple() {
         String pathname = "dupTestSimple.cma";
         CMaTriple machine_t = setup_run_machine(pathname);
+
+        assertEquals(machine_t.sp, 1);
+        assertEquals(machine_t.stack[machine_t.sp], 1);
+        machine_t.machine.printStack();
     }
 
-    // TODO Not enough operands on the stack
-
-    // TODO A full program test
+    @Test
     void factorial() {
+        String pathname = "factorial.cma";
+        CMaTriple machine_t = setup_run_machine(pathname);
+
+        assertEquals(machine_t.sp, 0);
+        // Apparently no easy way to compute 10! in java, hence magic number
+        assertEquals(machine_t.stack[machine_t.sp],3628800);
+        machine_t.machine.printStack();
     }
 }

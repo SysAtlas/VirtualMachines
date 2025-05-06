@@ -1,0 +1,9 @@
+LOADC 1 // Accumulator
+LOADC 5 // Argument 
+DUP 
+EQ 1
+JUMPZ 9
+DUP
+LOADC 1
+SUB
+JUMP 2
