@@ -1,0 +1,4 @@
+LOADC 5
+NEG
+LOADC 0
+NEG

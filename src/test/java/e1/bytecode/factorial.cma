@@ -1,0 +1,25 @@
+LOADC 1 // Accumulator
+LOADC 10 // Argument 
+DUP // Start routine
+DUP
+LOADC 2
+GEQ
+JUMPZ 11
+DUP
+LOADC 1
+SUB
+JUMP 3
+MUL
+LOADA 0 // Comparison Routine
+LOADC 1
+ADD
+STOREA 0
+POP
+LOADA 0
+LOADA 1
+NEQ 
+JUMPZ 22
+JUMP 11
+STOREA 0 
+POP
+POP
